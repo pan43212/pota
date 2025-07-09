@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para mi amorcito</title>
+  <style>
+    body {
+      background-color: rgb(236, 191, 160);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: hsl(0, 25%, 39%);
+    }
+
+    .cabeza {
+      border: 4px solid rgb(51, 105, 87);
+      border-radius: 0 40px 40px 40px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    #quiero {
+      text-align: center;
+      text-decoration: underline;
+      text-shadow: 0 5px 5px rgb(43, 41, 41);
+      padding: 10px 20px;
+    }
+
+    .columna {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .img-izq {
+      width: 120px;
+      border-radius: 12px;
+      box-shadow: 0 5px 5px rgb(43, 41, 41);
+    }
+
+    .img-der {
+      width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 5px 5px rgb(43, 41, 41);
+    }
+
+    details {
+      background: #c8865a;
+      padding: 10px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 300px;
+      margin: 10px auto;
+      color: white;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .audio-mini {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007acc;
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .audio-mini button {
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      color: #cea95f;
+      cursor: pointer;
+    }
+
+    .audio-mini button:active {
+      transform: scale(0.95);
+    }
+
+    @media screen and (max-width: 600px) {
+      .img-izq,
+      .img-der {
+        width: 90%;
+      }
+
+      details {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cabeza">
+    <h1>Dedicado a mi amorcito</h1>
+  </div>
+
+  <div id="quiero">
+    <p>
+      Desde que te vi supe que eras para mí,<br />
+      desde que te encontré en aquel chat global.<br />
+      Esto es para ti, para demostrar lo mucho que te amo, mi amorcito.
+    </p>
+  </div>
+
+  <!-- IMAGEN IZQUIERDA -->
+  <div class="columna">
+    <img src="https://i.postimg.cc/nr92Qsc9/q.jpg" class="img-izq" />
+  </div>
+
+  <!-- BLOQUES DE IMAGEN + MENSAJES -->
+  <div class="columna">
+    <img src="https://i.postimg.cc/0QHSmsj4/60097b21-3487-42c5-a21e-4b4296559357.jpg" class="img-der" />
+    <details>
+      <summary>Te amo cariño</summary>
+      <ul>
+        <li>Amo tu cabello oscuro, me dejarías acariciarlo 👋👩❤❤</li>
+        <li>Al verte siento lo sincera y amable que eres 💑</li>
+        <li>Siento la necesidad de protegerte mucho mucho 💖💪</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="columna">
+    <img src="https://i.postimg.cc/65HdXB2M/7eb6dcee-f289-4869-8716-bb8c9861e1f1.jpg" class="img-der" />
+    <details>
+      <summary>Te amo cariño</summary>
+      <ul>
+        <li>Me enamoré al ver tus ojos 😍</li>
+        <li>Me hace feliz ver tu sonrisa 😖</li>
+        <li>Le pido a Dios que te proteja 🛐💞</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="columna">
+    <img src="https://i.postimg.cc/t4wWsDzP/8df72d81-d35e-4734-80bc-24e238b4fd70.jpg" class="img-der" />
+    <details>
+      <summary>Te amo cariño</summary>
+      <ul>
+        <li>Al levantarme te veo y me siento afortunado 😚</li>
+        <li>Si esto es un sueño, no quiero despertar 😖</li>
+        <li>Contigo el tiempo no basta para amarte 🤗</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="columna">
+    <img src="https://i.postimg.cc/50Mz30T2/260d5446-9b4a-4eda-ad92-1a5aec8bfd60.jpg" class="img-der" />
+    <details>
+      <summary>Te lo preguntaré</summary>
+      <ul>
+        <li>¿Quieres amarme como yo a ti?</li>
+        <li>Quiero ser tu héroe 🐱‍🏍</li>
+        <li>Prometo tratarte con ternura, princesa 👸</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="musica" src="musica1.mp3" autoplay loop></audio>
+
+  <div class="audio-mini">
+    <button id="btnPlayPause">⏸️</button>
+  </div>
+
+  <script>
+    const audio = document.getElementById("musica");
+    const btn = document.getElementById("btnPlayPause");
+
+    window.addEventListener("DOMContentLoaded", () => {
+      audio.play().catch(() => {
+        btn.innerText = "▶️";
+      });
+    });
+
+    btn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        btn.innerText = "⏸️";
+      } else {
+        audio.pause();
+        btn.innerText = "▶️";
+      }
+    });
+  </script>
+</body>
+</html>
